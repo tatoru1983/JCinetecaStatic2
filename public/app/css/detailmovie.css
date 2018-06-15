@@ -1,0 +1,35 @@
+.detailpanel{
+  background-color: rgb(14, 145, 185);
+  width: 100%;
+  vertical-align: center;
+  text-align: left;
+}
+
+.filterpanel{
+  background-color: rgba(255, 255, 255, 0.3);
+  width: 100%;
+  padding: 50px;
+}
+
+.tablepanel{
+  background-color: rgba(255, 255, 255, 0.6);
+  width: 100%;
+  padding: 50px;
+}
+
+.label{
+    font-size: 20px;
+    text-align: left;
+}
+
+.value{
+    font-size: 18px;
+    text-align: left;
+}
+
+.thdash{
+  background-color: white;
+  border-style: solid;
+  border-color: midnightblue;
+  cursor: pointer;
+}
