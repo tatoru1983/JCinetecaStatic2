@@ -39,10 +39,14 @@ function ($scope, $rootScope, $location, $http, DashboardService, DetailService)
 
 	$scope.detail = function (imdbid) {
 		//var imdbid = $scope.data[0].IMDBID;
-		DashboardService.getMovieByID(imdbid, function(response) {
+
+		/*DashboardService.getMovieByID(imdbid, function(response) {
 			DetailService.setDetail(response);
-			console.log(DetailService.getDetail());
 			$location.path('/detailmovie');
-		});
+		});*/
+
+		var response = [{"TITLE_ITA":"Le iene","TITLE":"Reservoir Dogs","YEAR":"1992","RATED":"R","Released":"02 Sep 1992","RUNTIME":"99 min","GENRE":"Crime, Drama, Thriller","DIRECTOR":"Quentin Tarantino","WRITER":"Quentin Tarantino, Quentin Tarantino (background radio dialogue written by), Roger Avary (background radio dialogue written by)","ACTORS":"Harvey Keitel, Tim Roth, Michael Madsen, Chris Penn","PLOT":"After a simple jewelry heist goes terribly wrong, the surviving criminals begin to suspect that one of them is a police informant.","Language":"English","COUNTRY":"USA","AWARDS":"12 wins & 22 nominations.","POSTER":"https://ia.media-imdb.com/images/M/MV5BZmExNmEwYWItYmQzOS00YjA5LTk2MjktZjEyZDE1Y2QxNjA1XkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_SX300.jpg","METASCORE":"79","IMDBRATING":"8.3","IMDBVOTES":"770,000","IMDBID":"tt0105236","TyTYPEpe":"movie","DVD":"05 Nov 2002","BOXOFFICE":"N/A","PRODUCTION":"Miramax Films","WEBSITE":"N/A","RESPONSE":"True"}];
+		DetailService.setDetail(response);
+		$location.path('/detailmovie');
 	};
 }]);

@@ -3,6 +3,18 @@
   width: 100%;
   vertical-align: center;
   text-align: left;
+  padding-top: 10px;
+}
+
+.detaititlelpanel{
+  background-color: rgb(14, 145, 185, 0.5);
+  width: 100%;
+  vertical-align: center;
+  text-align: center;
+}
+
+.detailmainpanel{
+  padding-top: 70px;
 }
 
 .filterpanel{

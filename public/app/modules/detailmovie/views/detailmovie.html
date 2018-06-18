@@ -1,4 +1,4 @@
-<nav class="navbar navbar-inverse">
+<nav class="navbar navbar-inverse navbar-fixed-top">
     <div class="container-fluid">
         <div class="navbar-header">
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
@@ -16,12 +16,11 @@
         </div>
     </div>
 </nav>
-<div class="container detailpanel">
-    <h3>{{detail.TITLE_ITA}}</h3>
-    <p>{{detail.TITLE}}</p>
+<div class="detailmainpanel">
+<div class="container detaititlelpanel">
+    <h1 class="display-1">{{detail.TITLE_ITA}}</h1>
+    <h3 class="display-3">{{detail.TITLE}}</h3>
 </div>
-</br>
-</br>
 <div class="container detailpanel">
     <form>
         <div class="col-sm-3 col-md-3 col-lg-3 col-xl-3">
@@ -142,4 +141,5 @@
             </div>
         </div>
     </form>
+</div>
 </div>
