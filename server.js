@@ -4,6 +4,7 @@ var express = require('express'),
     customers = require('./routes/customers');
 	  users = require('./routes/users');
 	  movies = require('./routes/movies');
+	  ratings = require('./routes/ratings');
 
 var app = express();
 var bodyParser = require('body-parser');
@@ -25,6 +26,7 @@ app.all('/*', function(req, res, next) {
 app.post('/users', users.getUser);
 app.post('/movies', movies.getMovies);
 app.post('/movies/:imdbid', movies.getMovieByID);
+app.post('/ratings/:imdbid', ratings.getRatingsByID);
 
 // Http Methods
 app.get('/customers', customers.findAll);

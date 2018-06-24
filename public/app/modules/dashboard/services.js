@@ -22,6 +22,13 @@ angular.module('Dashboard')
                     callback(response);
                 });
         };
+
+        service.getRatingsByID = function (imdbid,  callback) {
+            $http.post('http://localhost:3000/ratings/'+imdbid, {  })
+                .success(function (response) {
+                    callback(response);
+                });
+        };
  
         return service;
     }]);

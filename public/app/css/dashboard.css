@@ -19,21 +19,28 @@
 }
 
 .mainpanel{
-  background-color: rgba(16,71,120,1);
   width: 100%;
-  padding: 25px;
+  padding-top: 20px;
+  padding-left: 10px;
+  padding-right: 10px;
   vertical-align: center;
   text-align: left;
 }
 
 .filterpanel{
-  background-color: rgba(255, 255, 255, 0.3);
+  background-color: rgb(14, 145, 185, 0.5);
+  border-radius: 10px 10px 10px 10px;
+  border-color: black;
+  border-style: groove;
   width: 100%;
   padding: 50px;
 }
 
 .tablepanel{
-  background-color: rgba(255, 255, 255, 0.6);
+  background-color: rgba(83, 187, 219, 0.5);
+  border-radius: 10px 10px 10px 10px;
+  border-color: black;
+  border-style: groove;
   width: 100%;
   padding: 50px;
 }
@@ -86,7 +93,7 @@
   color: #333;
 }
 .tabledash-rounded thead th:first-child {
-  border-radius: 10px 0 0 0;
+  border-radius: 10px 0 0 0;border-radius: 10px 0 0 0;
 }
 .tabledash-rounded thead th:last-child {
   border-radius: 0 10px 0 0;
@@ -94,7 +101,7 @@
 .tabledash-rounded tbody td {
   border: none;
   border-top: solid 1px black;
-  background-color: rgba(255, 255, 255, 0.3);
+  background-color: rgba(255, 255, 255, 0.5);
 }
 .tabledash-rounded tbody tr:last-child td:first-child {
   border-radius: 0 0 0 10px;

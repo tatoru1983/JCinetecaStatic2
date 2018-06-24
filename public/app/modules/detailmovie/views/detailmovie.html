@@ -21,6 +21,8 @@
     <h1 class="display-1">{{detail.TITLE_ITA}}</h1>
     <h3 class="display-3">{{detail.TITLE}}</h3>
 </div>
+</div>
+<div class="detailmainpanel2">
 <div class="container detailpanel">
     <form>
         <div class="col-sm-3 col-md-3 col-lg-3 col-xl-3">
@@ -128,14 +130,14 @@
         <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
             <div class="row">
                 <span class="label">Valutazione:</span>
-                <table class="table">
+                <table class="tabledash tabledash-rounded table-hover">
                         <thead>
-                                <th class="thdash">Sito</th>
-                                <th class="thdash">Valore</th>
+                                <th class="thdashsite">Sito</th>
+                                <th class="thdashvalue">Valore</th>
                         </thead>
-                        <tr ng-repeat="row in detail.Ratings">
-                            <td>{{row.Source}}</td>
-                            <td>{{row.Value}}</td>
+                        <tr ng-repeat="row in ratings">
+                            <td>{{row.SOURCE}}</td>
+                            <td>{{row.VALUE}}</td>
                         </tr>
                 </table>
             </div>
