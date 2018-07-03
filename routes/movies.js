@@ -9,7 +9,7 @@ var connection = mysql.createConnection({
 // POST
 exports.getMovies = function(req, res) {
 	var filter = req.body;
-	var query = 'SELECT * FROM FILM WHERE ('+filter.dvdNull+' IS NULL OR DVD = \''+filter.dvdNotNull+'\') AND ('+filter.titleNull+' IS NULL OR UPPER(TITLE) LIKE \''+filter.titleNotNull+'\')';
+	var query = 'SELECT * FROM FILM WHERE ('+filter.dvdNull+' IS NULL OR DVD = \''+filter.dvdNotNull+'\') AND (\''+filter.titleNull+'\' IS NULL OR UPPER(TITLE) LIKE \''+filter.titleNotNull+'\' OR UPPER(TITLE_ITA) LIKE \''+filter.titleNotNull+'\')';
 	connection.query(query,
 	[], function(err, results) {
 	  if (err) throw err;

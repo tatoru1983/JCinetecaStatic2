@@ -15,7 +15,10 @@ function ($scope, $rootScope, $location, $http, DashboardService, DetailService)
 
 
 	$scope.search = function(){
-		var titleNotNull = $scope.titleFilter == undefined ? '' : '%'||$scope.titleFilter.toUpperCase()||'%';
+		if($scope.titleFilter == undefined && $scope.dvdFilter == undefined){
+			alert('Valorizzare Titolo o DVD');
+		}
+		var titleNotNull = $scope.titleFilter == undefined ? '' : '%'+$scope.titleFilter.toUpperCase()+'%';
 		var dvdNotNull = $scope.dvdFilter == undefined ? '' : $scope.dvdFilter;
 		var titleNull = $scope.titleFilter == undefined ? 'NULL' : $scope.titleFilter.toUpperCase();
 		var dvdNull = $scope.dvdFilter == undefined ? 'NULL' : $scope.dvdFilter;
@@ -42,12 +45,10 @@ function ($scope, $rootScope, $location, $http, DashboardService, DetailService)
 
 		DashboardService.getMovieByID(imdbid, function(response) {
 			DetailService.setDetail(response);
-			//$location.path('/detailmovie');
-		});
-
-		DashboardService.getRatingsByID(imdbid, function(response) {
-			DetailService.setRatings(response);
-			//$location.path('/detailmovie');
+			DashboardService.getRatingsByID(imdbid, function(response) {
+				DetailService.setRatings(response);
+				$location.path('/detailmovie');
+			});
 		});
 
 		/* Dummy search
@@ -57,7 +58,5 @@ function ($scope, $rootScope, $location, $http, DashboardService, DetailService)
 		DetailService.setDetail(responseDetail);
 
 		var responseRatings = [];*/
-
-		$location.path('/detailmovie');
 	};
 }]);

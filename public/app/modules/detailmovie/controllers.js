@@ -7,5 +7,5 @@ function ($scope, $rootScope, $location, DetailService) {
 
 	$scope.detail = DetailService.getDetail();
 	$scope.ratings = DetailService.getRatings();
-
+	window.scrollTo(0, 0);
 }]);
