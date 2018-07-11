@@ -19,8 +19,8 @@ function ($scope, $rootScope, $location, $http, DashboardService, DetailService)
 			alert('Valorizzare Titolo o DVD');
 		}
 		var titleNotNull = $scope.titleFilter == undefined ? '' : '%'+$scope.titleFilter.toUpperCase()+'%';
-		var dvdNotNull = $scope.dvdFilter == undefined ? '' : $scope.dvdFilter;
-		var titleNull = $scope.titleFilter == undefined ? 'NULL' : $scope.titleFilter.toUpperCase();
+		var dvdNotNull = $scope.dvdFilter == undefined ? '0' : $scope.dvdFilter;
+		var titleNull = $scope.titleFilter == undefined ? 'NULL' : '\''+$scope.titleFilter.toUpperCase()+'\'';
 		var dvdNull = $scope.dvdFilter == undefined ? 'NULL' : $scope.dvdFilter;
 
 		/* Dummy search
@@ -36,6 +36,12 @@ function ($scope, $rootScope, $location, $http, DashboardService, DetailService)
 		
 		DashboardService.getMovies(dvdNull, dvdNotNull, titleNull, titleNotNull, function(response) {
 			$scope.data = response;
+			//pagination
+			$scope.viewby = 10;
+			$scope.totalItems = $scope.data.length;
+			$scope.currentPage = 1;
+			$scope.itemsPerPage = $scope.viewby;
+			$scope.maxSize = 5; //Number of pager buttons to show
 		});
 		
 	};
@@ -59,4 +65,15 @@ function ($scope, $rootScope, $location, $http, DashboardService, DetailService)
 
 		var responseRatings = [];*/
 	};
+
+	//pagination
+	$scope.viewby = 10;
+	$scope.totalItems = $scope.data.length;
+	$scope.currentPage = 4;
+	$scope.itemsPerPage = $scope.viewby;
+	$scope.maxSize = 5; //Number of pager buttons to show
+
+	$scope.pageChanged = function() {
+		console.log('Page changed to: ' + $scope.currentPage);
+	  };
 }]);
