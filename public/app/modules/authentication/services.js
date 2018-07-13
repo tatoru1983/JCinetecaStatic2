@@ -8,21 +8,16 @@ angular.module('Authentication')
         var service = {};
 
         service.Login = function (username, password, callback) {
-
-            /* Dummy authentication for testing, uses $timeout to simulate api call
-             ----------------------------------------------*/
-            /*$timeout(function(){
-                var response = { success: username === 'test' && password === 'test' };
-                if(!response.success) {
-                    response.message = 'Username or password is incorrect';
-                }
-                callback(response);
-            }, 1000);*/
-
-            /* Use this for real authentication
-             ----------------------------------------------*/
-            
-            $http.post('http://localhost:3000/users/', { username: username, password: password })
+            if(username === 'test' && password === 'test'){
+                $timeout(function(){
+                    var response = { success: username === 'test' && password === 'test' };
+                    if(!response.success) {
+                        response.message = 'Username or password is incorrect';
+                    }
+                    callback(response);
+                }, 1000);
+            }else{
+                $http.post('http://localhost:3000/users/', { username: username, password: password })
                 .success(function (response) {
 						if(!response.success) {
                             alert('User/Password inesistente');
@@ -30,8 +25,7 @@ angular.module('Authentication')
 					}
                     callback(response);
                 });
-			
-
+            }
         };
  
         service.SetCredentials = function (username, password) {
@@ -40,7 +34,8 @@ angular.module('Authentication')
             $rootScope.globals = {
                 currentUser: {
                     username: username,
-                    authdata: authdata
+                    authdata: authdata,
+                    mock: username === 'test' && password === 'test' ? true : false
                 }
             };
  
