@@ -21,9 +21,33 @@ exports.getMovies = function(req, res) {
 exports.getMovieByID = function(req, res) {
 	var imdbid = req.params.imdbid;
 	var query = 'SELECT * FROM FILM WHERE IMDBID = ? ';
+	console.log(query);
 	connection.query(query,
 	[imdbid], function(err, results) {
 	  if (err) throw err;
 		res.send(results);
 	});
+};
+
+// PUT
+exports.updateSeenMovie = function(req, res) {
+	var imdbid = req.params.imdbid;
+	var query = 'UPDATE FILM SET SEEN = 1 WHERE IMDBID = ? ';
+	console.log(query);
+	connection.query(query,
+		[imdbid],  function (err, result) {
+		if (err) throw err;
+		res.send(imdbid);
+	})
+};
+
+exports.updateNotSeenMovie = function(req, res) {
+	var imdbid = req.params.imdbid;
+	var query = 'UPDATE FILM SET SEEN = 0 WHERE IMDBID = ? ';
+	console.log(query);
+	connection.query(query,
+		[imdbid],  function (err, result) {
+		if (err) throw err;
+		res.send(imdbid);
+	})
 };

@@ -28,6 +28,8 @@ app.post('/movies', movies.getMovies);
 app.post('/movies/:imdbid', movies.getMovieByID);
 app.post('/ratings/:imdbid', ratings.getRatingsByID);
 
+app.put('/movies/:imdbid', movies.updateSeenMovie);
+app.put('/movies/:imdbid', movies.updateNotSeenMovie);
 // Http Methods
 app.get('/customers', customers.findAll);
 app.get('/customers/:id', customers.findById);

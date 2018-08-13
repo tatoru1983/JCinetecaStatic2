@@ -12,22 +12,32 @@ angular.module('Detail')
 
         service.setDetail = function (detailInput) {
             detail = detailInput[0];
-            //console.log("setDetail - "+detail.TITLE);
         }
 
         service.getDetail = function(){
-            //console.log("getDetail - "+detail.TITLE);
             return detail;
         };
 
         service.setRatings = function (ratingsInput) {
             ratings = ratingsInput;
-            console.log("setRatings - "+ratings);
         }
 
         service.getRatings = function(){
-            //console.log("getRatings - "+ratings);
             return ratings;
+        };
+
+        service.updateSeenMovie = function (imdbid,  callback) {
+            $http.put('http://localhost:3000/movies/'+imdbid, {  })
+                .success(function (response) {
+                    callback(response);
+                });
+        };
+
+        service.updateNotSeenMovie = function (imdbid,  callback) {
+            $http.put('http://localhost:3000/movies/'+imdbid, {  })
+                .success(function (response) {
+                    callback(response);
+                });
         };
 
         return service;
