@@ -1,8 +1,8 @@
 var mysql      = require('mysql');
 var connection = mysql.createConnection({
-  host     : 'db-cineteca.c4w6olsewc3z.us-east-2.rds.amazonaws.com',
+  host     : '----',
   user     : 'salvatore',
-  password : 'aprano1983',
+  password : '----',
   database: 'cineteca'
 });
 
